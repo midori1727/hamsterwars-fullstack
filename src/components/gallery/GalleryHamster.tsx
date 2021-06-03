@@ -37,7 +37,7 @@ const GalleryHamster = (props : any ) => {
 			}
 		}
 		getMatchWinner()
-	},[])
+	},[props.selectedHamster.id])
 
 
 	const removeHamster = async () => {

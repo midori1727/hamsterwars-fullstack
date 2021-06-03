@@ -23,8 +23,7 @@ const Battle = () => {
 				
 				const response2 = await fetch('/hamsters/random', { method: 'GET'});
 				const data2 = await response2.json();
-				console.log(data2);
-				
+				console.log(data2);	
 				
 				if(data1 !== data2 ) {
 					setHamster1(data1)
@@ -110,7 +109,6 @@ const Battle = () => {
 		setMatch({ "winnerId": winner.id, "loserId": loser.id } as MatchObject);
 		console.log('winner is: ' + winner.name + ' loser is ' + loser.name);
 		console.log('match is ' + match);
-	
 	}
 
 	

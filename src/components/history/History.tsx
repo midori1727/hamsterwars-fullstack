@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { HamsterObject, MatchObject } from '../types/Types'
 import './history.css'
-import crown from '../img/crown.png' 
-
 
 const History = () => {
 
