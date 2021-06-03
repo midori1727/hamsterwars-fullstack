@@ -1,0 +1,63 @@
+.history-wrapper h1 {
+	color: white;
+	font-size: 3em;
+}
+
+.history-wrapper > p  {
+	color: white;
+	font-size: 1.3em;
+}
+
+.History {
+	display: flex;
+	justify-content: center;
+}
+
+.History-card li {
+	justify-content: center;
+	list-style-type: none;
+	width: 20em;
+	height: 22em;
+	/* border: gray solid ;
+	border-width:1px 1px 0px 1px; */
+	margin: 1em;
+	/* cursor: pointer; */
+}
+
+.History-card.winner button{
+	/* margin-left: 14em; */
+	margin-top: 12em;
+	z-index: 2;
+	position: absolute;
+}
+
+/* .History-card.loser button{
+	margin-right: 20em;
+	margin-top: 1em;
+} */
+
+.History-card.winner li {
+	border: black solid ;
+	background-color: white;
+	border-width:1px 0px 1px 1px;
+	margin-right: 0px;
+}
+
+.History-card.loser {
+	padding-left: 0px;
+}
+
+
+.History-card.loser li {
+	border: black solid ;
+	background-color: white;
+	border-width:1px 1px 1px 0px;
+	margin-left: 0px;
+}
+
+.History-card img {
+	width: 15em;
+	height: 13em;
+	object-fit: cover;
+}
+

@@ -1,0 +1,181 @@
+/* Gallery Component CSS */
+
+.gallery {
+	margin-left: 10%;
+    margin-right: 10%;
+}
+
+.gallery h1 {
+	color: white;
+	font-size: 3em;
+}
+
+.gallery ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.galleryCard li {
+	width: 15em;
+	height: 15.5em;
+	list-style-type: none;
+	border: black solid 1px;
+	background-color: white;
+	margin: 1em;
+	cursor: pointer;
+}
+
+.galleryCard img {
+	width: 10em;
+	height: 10em;
+	object-fit: cover;
+	transition: all 0.5s;
+}
+
+.galleryCard img:hover {
+	transform: scale(1.1, 1.1);
+}
+
+.galleryCard p {
+	padding-bottom: 0.1em;
+}
+
+
+/* GalleryHamster Component CSS */
+
+
+.galleryHamster {
+	margin-bottom: 2em;
+}
+
+
+.galleryHamster-wrapper {
+	display: flex;
+	justify-content: center;
+	border: black solid 1px;
+	background-color: white;
+	margin-left: 20%;
+	margin-right: 20%;
+	/* margin: 1em; */
+}
+/* 
+.galleryHamster {
+	display: flex;
+	justify-content: center;
+} */
+
+.galleryHamster-img {
+	display: flex;
+	justify-content: center;
+}
+
+.galleryHamster-img img {
+	width: 20em;
+	height: 25em;
+	object-fit: cover;
+}
+
+.galleryHamster-info p, h2 {
+	margin-left: 2em;
+	text-align: left;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+
+}
+
+.galleryHamster-info ul {
+	padding-left: 0px;
+	list-style-type: none;
+}
+
+/* .galleryHamster-info p {
+	margin: 0.5em 0em;
+} */
+
+/* .defeated-hamster.galleryHamster-info p {
+	margin-left: 2em;
+} */
+
+
+.galleryHamster button {
+	margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.removed p {
+	color: white;
+	font-size: 2em
+}
+
+/* InputForm Component CSS */
+
+:root {
+	--error-color: rgb(247, 15, 15);
+	--valid-color: rgb(7, 158, 7);
+}
+
+.input-form-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+
+.input-form {
+	width: 30em;
+	height: 38em;
+	border: black solid 1px;
+	margin: 5em 20% 5em 20%;
+	background-color: white;
+
+}
+
+.input-form > div {
+	margin: 0.5em;
+}
+
+.input-form > div > label {
+	display: block;
+	margin-top: 1.5em;
+	margin-bottom: 0.4em;
+}
+
+.input-form  input {
+	font-size: 1.3em;
+	padding-left: 0.5em;
+
+}
+
+.input-form .error-message {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	color: var(--error-color);
+}
+
+.input-form .error {
+	border: solid 1px var(--error-color);
+}
+
+.input-form .valid {
+	border: solid 1px var(--valid-color);
+}
+
+.input-form button {
+	margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.input-form button:disabled {
+	background-color: rgb(211, 211, 211);
+	border: 1px solid rgb(211, 211, 211);
+	color: black;
+
+}
+
+/* Added Component CSS */
+
+.added p{
+	margin-top: 25em;
+	font-size: 2em;
+}

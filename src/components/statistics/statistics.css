@@ -1,0 +1,35 @@
+.statistics-wrapper h1 {
+	color: white;
+	font-size: 3em;
+}
+
+
+.statistics {
+	display: flex;
+	justify-content: center;
+	
+	/* flex-wrap: wrap; */
+}
+
+.statistics-hamster-card > p {
+	color: white;
+	font-size: 1.3em;
+}
+
+
+
+.statistics-hamster-card li{
+	justify-content: center;
+	list-style-type: none;
+	width: 20em;
+	height: 22em;
+	border: black solid 1px;
+	background-color: white;
+	margin: 1em;
+}
+
+.statistics-hamster-card img {
+	width: 15em;
+	height: 15em;
+	object-fit: cover;
+}

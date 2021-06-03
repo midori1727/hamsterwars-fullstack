@@ -1,0 +1,84 @@
+.battle {
+	margin-bottom: 7em;
+}
+
+
+.battle-title h1 {
+	font-size: 3em;
+	color: white;
+}
+
+.battle-title h2 {
+	font-size: 2em;
+	color: white;
+	text-align: center;
+}
+
+.Battle-hamster-card {
+	display: flex;	
+	justify-content: center;
+}
+
+.hamster-card {
+	justify-content: center;
+	width: 20em;
+	height: 22em;
+	border: black solid 1px;
+	background-color: white;
+	margin: 1em;
+	cursor: pointer;
+}
+
+.hamster-card img {
+	width: 15em;
+	height: 15em;
+	object-fit: cover;
+	transition: all 0.5s;
+}
+
+.hamster-card img:hover {
+	transform: scale(1.1, 1.1);
+}
+
+.hamster-card p {
+	margin-bottom: 1.3em;
+	font-size: 1.2em;
+}
+
+
+/* BattleResult Component CSS */
+
+.battle-result-container {
+	display: flex;	
+	justify-content: center;
+}
+
+.battle-result > h1 {
+	color: white;
+	font-size: 3em;
+}
+
+.battle-result-card {
+	justify-content: center;
+	width: 20em;
+	height: 28em;
+	border: black solid 1px;
+	background-color: white;
+	margin: 1em;
+}
+
+.battle-result-card img {
+	width: 15em;
+	height: 15em;
+	object-fit: cover;
+}
+
+.battle-button {
+	margin-top: 2em;
+}
+
+
+
+
+
+
