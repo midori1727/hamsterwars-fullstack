@@ -8,7 +8,7 @@ export interface HamsterObject {
 	"wins": number,
 	"defeats": number,
 	"games": number
-};
+}
 
 export interface MatchObject {
 	id: string,

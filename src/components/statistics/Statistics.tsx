@@ -39,7 +39,7 @@ const Statistics = () => {
 						<li key={winner.name}>
 							<p>{winner.name}</p>
 							<img src={`img/${winner.imgName}`} alt={winner.imgName}/>
-							<p>won: {winner.wins}times</p>
+							<p>Won: {winner.wins} times</p>
 						</li>
 					))
 					
@@ -54,7 +54,7 @@ const Statistics = () => {
 						<li key={loser.name}>
 							<p>{loser.name}</p> 
 							<img src={`img/${loser.imgName}`} alt={loser.imgName}/>
-							<p>lose: {loser.defeats}times</p>
+							<p>Lost: {loser.defeats} times</p>
 							</li>
 					))
 					: <p>There is no loser hamster yet. Please go to Battle!</p>

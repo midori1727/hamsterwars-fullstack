@@ -16,12 +16,8 @@ const Gallery =() => {
 		const fetchHamsters = async () => {
 			try {
 				const response = await fetch('/hamsters', { method: 'GET'})
-				console.log(response);
-				
 				const data: HamsterObject[] = await response.json()
-				
-				setHamsters(data)
-					
+				setHamsters(data)	
 			}
 			catch (error) {
 				return error
@@ -45,29 +41,23 @@ const Gallery =() => {
 					Gallery
 				</h1>
 				{!showHamsterInfo
-				&& 
-				<Link to="/inputForm"><button>Add your hamster here!</button></Link>
+				&& <Link to="/inputForm"><button>Add your hamster here!</button></Link>
 				}
-				
-				
 				<ul className="galleryCard">
 					{hamsters && !hideHamsters
 					&& hamsters.map(hamster => (
 						<li key={hamster.id} onClick={() => handleClick(hamster)}> <p>{hamster.name}</p> <img src={`img/${hamster.imgName}`} alt={hamster.imgName}/></li>))
 					}
 				</ul>
-			
-			 {/* <Link to="/galleryHamster"> < GalleryHamster /> </Link> */}
 			</div>
 			{showHamsterInfo
 			&& <GalleryHamster 
-			selectedHamster={selectedHamster}
-			setHideHamsters={setHideHamsters} 
-			setShowHamsterInfo={setShowHamsterInfo}
-			renderHamsters={renderHamsters}
-			setRenderHamsters={setRenderHamsters}/>}
+				selectedHamster={selectedHamster}
+				setHideHamsters={setHideHamsters} 
+				setShowHamsterInfo={setShowHamsterInfo}
+				renderHamsters={renderHamsters}
+				setRenderHamsters={setRenderHamsters}/>}
 		</div>
-		
 	)
 };
 

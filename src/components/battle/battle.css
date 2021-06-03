@@ -1,7 +1,8 @@
+/* Battle Component CSS */
+
 .battle {
 	margin-bottom: 7em;
 }
-
 
 .battle-title h1 {
 	font-size: 3em;
@@ -44,7 +45,6 @@
 	margin-bottom: 1.3em;
 	font-size: 1.2em;
 }
-
 
 /* BattleResult Component CSS */
 

@@ -1,7 +1,7 @@
-
 import { useEffect, useState } from "react";
 import { HamsterObject, MatchObject } from '../types/Types'
 import './history.css'
+import crown from '../img/crown.png' 
 
 
 const History = () => {
@@ -40,7 +40,6 @@ const History = () => {
 				const loserResponse = await Promise.all(loserIds.map(async id => fetch(`/hamsters/${id}`, { method: 'GET'}))) 
 				const loserData = await Promise.all(loserResponse.map(r => r.json()))
 				setMatchLosers(loserData)
-
 				
 			} catch (error) {
 				console.log(error);
@@ -63,7 +62,6 @@ const History = () => {
 			const removeMatchData = await removeRes.text()
 			console.log(removeMatchData);
 			setRemoved(true)
-			
 		}
 	}
 
@@ -72,71 +70,48 @@ const History = () => {
 	}
 
 	
-
 	return(
 		<div className="history-wrapper">
+			{!removed
+			? 
+			<>
 			<h1>History</h1>
 			<p>Here you can see the latest matches!</p>
 			<p>You can also remove matches</p>
-			
-			{!removed
-			? 
 			<div className="History">
 				<ul className="History-card winner">
 					{matchWinners
-					? matchWinners.map((winner, index) => (
+					? 
+					matchWinners.map((winner, index) => (
 						<li key={winner.name}>
-							<p>winner: {winner.name}</p>
+							<p>Winner: {winner.name}</p>
 							<img src={`img/${winner.imgName}`} alt={winner.imgName}/>
 							<button  onClick={() => removeMatch(index)}>Remove</button>
-							</li>
+						</li>
 					))
 					: <p>There is no battle history yet. Please go to Battle!</p>
 					}
 				</ul>
 				<ul className="History-card loser">
 					{matchLosers
-					?matchLosers.map((loser, index)=> (
+					?
+					matchLosers.map((loser, index)=> (
 						<li key={loser.name}>
-							<p>loser: {loser.name}</p>
+							<p>Loser: {loser.name}</p>
 							<img src={`img/${loser.imgName}`} alt={loser.imgName}/>
-							{/* <button  onClick={() => removeMatch(index)}>Remove</button> */}
-							</li>
+						</li>
 					))
 					: <p>There is no battle history yet. Please go to Battle!</p>
 					}
 				</ul>
-				{/* <ul className="History-card winner">
-					{matchWinners
-					? matchWinners.map((winner, index) => (
-						<li key={winner.name}>
-							<p>winner: {winner.name}</p>
-							<img src={`img/${winner.imgName}`} alt={winner.imgName}/>
-							<button onClick={() => removeMatch(index)}>Remove</button>
-							</li>
-					))
-					: <p>There is no battle history yet. Please go to Battle!</p>
-					}
-				</ul>
-				<ul className="History-card loser">
-					{matchLosers
-					?matchLosers.map((loser, index)=> (
-						<li key={loser.name}>
-							<p>loser: {loser.name}</p>
-							<img src={`img/${loser.imgName}`} alt={loser.imgName}/>
-							</li>
-					))
-					: <p>There is no battle history yet. Please go to Battle!</p>
-					}
-				</ul> */}
-				
 			</div>
-			: <div>
+			</>
+			:
+			<div className="removed">
 				<p>The match had been removed!</p>
 				<button onClick={showHistory}>Back to History</button>
 			</div>
 			}
-			
 		</div>
 	)
 };

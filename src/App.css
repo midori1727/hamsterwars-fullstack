@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto&display=swap');
+
 .App {
   text-align: center;
   min-height: 100vh;
@@ -5,6 +7,9 @@
   flex-direction: column;
 }
 
+* :not(.header):not(h1):not(a) {
+	font-family: 'Roboto', sans-serif;
+}
 
 main {
 	flex: 1 1 auto;
@@ -23,6 +28,7 @@ button {
 
 button:hover {
 	cursor: pointer;
-	border: 1px solid violet;
-	background-color: violet;
+	border: 1px solid black;
+	background-color: black;
+	color: rgb(31, 167, 177);
 }

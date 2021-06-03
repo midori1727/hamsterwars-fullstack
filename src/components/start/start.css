@@ -1,0 +1,29 @@
+.start {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.start h1 {
+	color: white;
+}
+
+
+
+.start-section-wrapper {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+
+.start-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 20em;
+	height: 13em;
+	border: black solid 1px;
+	background-image: linear-gradient( 135deg, #81FFEF 10%, #F067B4 100%);
+	margin: 1em;
+}
+

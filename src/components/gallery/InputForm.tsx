@@ -43,7 +43,7 @@ const InputForm = () => {
 		ageErrorMessage = 'Please input your hamster´s age'
 	} else if ( !allowedAgeCharacters.includes(age[0])) {
 		ageIsValid = false
-		ageErrorMessage = 'Please input digit'
+		ageErrorMessage = 'Please only use digit'
 	}
 	let ageClass = ''
 	if( ageTouched ) {
@@ -88,7 +88,6 @@ const InputForm = () => {
 
 	let formIsInvaild = !nameIsValid || !ageIsValid || !favFoodIsValid || !lovesIsValid || !imgIsValid
 
-
 	const postHamster = async () => {
 		
 		const hamsterRequest = {
@@ -120,8 +119,11 @@ const InputForm = () => {
 				 className={nameClass}
 				 />
 				 {nameTouched
-				 ? <div className="error-message">{nameErrorMessage}</div>
-				: null }
+				 &&
+				 <div className="error-message">
+					 {nameErrorMessage}
+				 </div>
+				 }
 				
 			</div>
 			<div>
@@ -132,8 +134,9 @@ const InputForm = () => {
 				className={ageClass}
 				/>
 				{ageTouched
-				 ? <div className="error-message">{ageErrorMessage}</div>
-				: null }
+				 &&
+				 <div className="error-message">{ageErrorMessage}</div>
+				 }
 			</div>
 			<div>
 				<label>Favorite Food: </label> 
@@ -143,8 +146,9 @@ const InputForm = () => {
 				className={favFoodClass}
 				/>
 				{favFoodTouched
-				 ? <div className="error-message">{favFoodErrorMessage}</div>
-				: null }
+				 &&
+				 <div className="error-message">{favFoodErrorMessage}</div>
+				 }
 			</div>
 			<div>
 				<label>Loves: </label> 
@@ -154,10 +158,10 @@ const InputForm = () => {
 				className={lovesClass}
 				/>
 				{lovesTouched
-				 ? <div className="error-message">{lovesErrorMessage}</div>
-				: null }
+				 &&
+				<div className="error-message">{lovesErrorMessage}</div>
+				 }
 			</div>
-			
 			<div>
 				<label>Image: </label> 
 				<input type="text" name="imgName" value={img}
@@ -166,19 +170,21 @@ const InputForm = () => {
 				className={imgClass}
 				/>
 				{imgTouched
-				 ? <div className="error-message">{imgErrorMessage}</div>
-				: null }
+				 &&
+				<div className="error-message">{imgErrorMessage}</div>
+				 }
 			</div>
 			<div>
 				<button 
 				onClick={postHamster}
-				disabled={formIsInvaild}>Add my hamster</button>
+				disabled={formIsInvaild}>
+					Add my hamster
+				</button>
 			</div>
 			<Link to="/gallery" > <button>Back to Gallery</button> </Link>
 			</>
-		   : <Added />}
-			
-			
+		   : <Added />
+		   }
 		</div>
 		</div>
 	)

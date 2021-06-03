@@ -1,38 +1,49 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
-
-
-
 header {
 	border-bottom: 2px solid rgb(214, 155, 206);
 	padding: 0.5em;
 	background-color: black;
 }
 
-a:link, a:visited, a:hover, a:active {
-	color: rgb(214, 155, 206);
-}
-
 nav {
 	margin-bottom: 2em;
-}
-
-nav a:hover {
-	color: purple;
 }
 
 nav a {
 	padding: 0.2em 1.5em ;
 	text-decoration: none;
-	/* font-size: 1.2em; */
-	
 }
 
 .header h1 {
 	font-size: 5em;
 	font-family: 'Monoton', cursive;
+	margin-top: 0.6em;
+	margin-bottom: 0.6em;
+	margin-left: 3.5em;
+}
+
+.header a {
+	color: rgb(31, 167, 177);
+}
+
+.header a:hover {
+	color: purple;
 }
 
 .header a.active {
 	font-weight: bold;
+}
+
+.nav-link a {
+	font-size: 1.5em;
+}
+
+.header img {
+	width: 11em;
+	height: 11em;
+	object-fit: cover;
+	margin-top: 3em;
+}
+
+.header-title {
+	display: flex;
 }

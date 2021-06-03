@@ -1,20 +1,15 @@
 import { NavLink, Link } from 'react-router-dom';
 import './header.css'
-// import Logo from '../img/hamster.png'
-
-
-
-
+import logo from '../img/hamster.png' 
 
 const Header = () => (
 	<div className="header">
+		<section className="header-title">
 		<h1><Link to="/"> Hamsterwars </Link></h1>
-		{/* <img src="{logo}" /> */}
-		{/* <img src={'/img/hamster.png'} /> */}
-		{/* <img src='../../public/img/hamster-1.jpg' /> */}
+		<img src={logo} alt='hamster-logo' />
+		</section>
 		
-		
-		<nav>
+		<nav className="nav-link">
 			<NavLink to="/battle" activeClassName="active"> Battle </NavLink>
 			<NavLink to="/gallery" activeClassName="active"> Gallery </NavLink>
 			<NavLink to="/statistics" activeClassName="active"> Statistics </NavLink>
