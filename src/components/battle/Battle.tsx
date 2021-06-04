@@ -19,11 +19,9 @@ const Battle = () => {
 			try {
 				const response1 = await fetch('/hamsters/random', { method: 'GET'});
 				const data1 = await response1.json();
-				console.log(data1);
 				
 				const response2 = await fetch('/hamsters/random', { method: 'GET'});
 				const data2 = await response2.json();
-				console.log(data2);	
 				
 				if(data1 !== data2 ) {
 					setHamster1(data1)
@@ -57,8 +55,6 @@ const Battle = () => {
 			headers: { 'Content-Type' : 'application/json', 'Accept': 'application/json', },
 			body: JSON.stringify( { "wins": winner.wins + 1, "games": winner.games + 1} )
 		}
-		console.log('winner is ' + winner);
-		console.log(JSON.stringify(winner));
 		
 		const winnerResponse = await fetch(`/hamsters/${winner.id}`, winnerRequest);
 		const winnerData = await winnerResponse.text();
@@ -78,7 +74,6 @@ const Battle = () => {
 			headers: { 'Content-Type' : 'application/json', 'Accept': 'application/json', },
 			body: JSON.stringify( { "defeats": loser.defeats + 1, "games": loser.games + 1} )
 		}
-		console.log('loser is ' + loser);
 		
 		const loserResponse = await fetch(`/hamsters/${loser.id}`, loserRequest);
 		const loserData = await loserResponse.text();
@@ -99,13 +94,12 @@ const Battle = () => {
 			headers: { 'Content-Type' : 'application/json', 'Accept': 'application/json', },
 			body: JSON.stringify( { "winnerId": winner.id, "loserId": loser.id } )
 		}
-		console.log('winner is ' + winner.name + ' loser is ' + loser.name);
 		
 		const matchResponse = await fetch(`/matches`, matchRequest);
 		const matchData = await matchResponse.text();
-		// setMatch(matchData)
 		console.log('match data is: ' + matchData);
 		
+		// setMatch(matchData)
 		setMatch({ "winnerId": winner.id, "loserId": loser.id } as MatchObject);
 		console.log('winner is: ' + winner.name + ' loser is ' + loser.name);
 		console.log('match is ' + match);

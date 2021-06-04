@@ -20,20 +20,15 @@ const History = () => {
 				//Hämta senaste 5 matcher
 				const latest: MatchObject[] = data.slice(-5)
 				setLatestMatches(latest)
-				console.log(latest);
-
 				//Hämta winnerId
 				const winnerIds = latest.map(winner => winner.winnerId)
-				console.log(winnerIds);
 				//Get hamsterObjekt med winnerId
 				const winnerResponse = await Promise.all(winnerIds.map(async id => fetch(`/hamsters/${id}`, { method: 'GET'}))) 
-				console.log(winnerResponse);
 				const winnerData = await Promise.all(winnerResponse.map(r => r.json()))
 				setMatchWinners(winnerData)
 				
 				//Hämta loserId
 				const loserIds = latest.map(loser => loser.loserId)
-				console.log(loserIds);
 				//Get hamsterObjekt med loserId
 				const loserResponse = await Promise.all(loserIds.map(async id => fetch(`/hamsters/${id}`, { method: 'GET'}))) 
 				const loserData = await Promise.all(loserResponse.map(r => r.json()))
@@ -52,7 +47,6 @@ const History = () => {
 	const removeMatch = async (index: number) => {
 		if(latestMatches){
 			let match = latestMatches[index]
-			console.log(match.id);
 			const removeMatchRequest = {
 						method: 'DELETE'
 					}
@@ -82,6 +76,7 @@ const History = () => {
 					? 
 					matchWinners.map((winner, index) => (
 						<li key={winner.name}>
+						{/* <li key={winner.id + index}> */}
 							<p>Winner: {winner.name}</p>
 							<img src={`img/${winner.imgName}`} alt={winner.imgName}/>
 							<button  onClick={() => removeMatch(index)}>Remove</button>

@@ -22,7 +22,6 @@ const GalleryHamster = (props : any ) => {
 
 				//Ta bort duplicerad loserId
 				const cleanedLoserId = Array.from(new Set(loserIds))
-				console.log(cleanedLoserId)
 
 				//Hämta HamsterObjekt med använd av loserId
 				const hamsterRes = await Promise.all(cleanedLoserId.map(async id => fetch(`/hamsters/${id}`, { method: 'GET'}))) 
@@ -84,7 +83,6 @@ const GalleryHamster = (props : any ) => {
 						<button onClick={removeHamster}>Remove this hamster</button>
 						</section>
 					</div>
-					{/* <button onClick={removeHamster}>Remove this hamster</button> */}
 					</>
 					: <section className="removed">
 						<p>removed!</p>

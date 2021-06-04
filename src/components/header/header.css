@@ -1,5 +1,4 @@
 header {
-	border-bottom: 2px solid rgb(214, 155, 206);
 	padding: 0.5em;
 	background-color: black;
 }
@@ -13,13 +12,16 @@ nav a {
 	text-decoration: none;
 }
 
-.header h1 {
-	font-size: 5em;
+.header-title a {
+	font-size:4.5em;
 	font-family: 'Monoton', cursive;
 	margin-top: 0.6em;
 	margin-bottom: 0.6em;
-	margin-left: 3.5em;
+	margin-left: 0em;
+	padding-right: 0em;
+	display: inline-block;
 }
+
 
 .header a {
 	color: rgb(31, 167, 177);
@@ -41,9 +43,11 @@ nav a {
 	width: 11em;
 	height: 11em;
 	object-fit: cover;
-	margin-top: 3em;
+	padding-top: 4em;
+	padding-left: 1em;
 }
 
 .header-title {
 	display: flex;
+	justify-content: center;
 }
